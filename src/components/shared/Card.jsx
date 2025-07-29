@@ -11,9 +11,9 @@ function Card({children, reverse = false}) {
   )
 }
 
-Card.defaultProps = {
-  reverse: true,
-}
+// Card.defaultProps = {
+//   reverse: true,
+// }
 
 // For some reason default props does not work for me :/
 
