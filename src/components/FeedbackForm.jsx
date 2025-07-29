@@ -8,6 +8,15 @@ function FeedbackForm() {
   const [message, setMessage] = useState()
 
   const handleTextChange = (e) => {
+    if (text === '') {
+      setBtnDisabled(true)
+      setMessage(null)
+    } else if (text !== '' && text.trim().length < 10) {
+      setMessage("Text must be at least 10 characters")
+      setBtnDisabled(true)
+
+    }
+
     setText(e.target.value)
   }
 
@@ -21,6 +30,8 @@ function FeedbackForm() {
           <Button type="submit" version="secondary" isDisabled={btnDisabled}>Send</Button>
         </div>
       </form>
+
+      {message && <div className="message">{message}</div>}
     </Card>
   )
 }
